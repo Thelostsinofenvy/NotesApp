@@ -4,5 +4,5 @@ from django.db import models
 
 
 class Notes(models.Model):
-    name = models.CharField(max_length=60)
-    text = models.TextField(max_length=300)
+    name = models.CharField(max_length=60, editable=True)
+    text = models.TextField(max_length=300, null=True, blank=True)
