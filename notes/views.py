@@ -1,9 +1,15 @@
-from django.http.response import HttpResponse
 from django.shortcuts import render
-from notes import models
+from .models import Note
 from django.http import request, HttpResponse
+from django.views.generic import ListView
+from django.utils import timezone
+
 # Create your views here.
 
 
-def home(request):
-    return render(request, 'base.html')
+class HomeView(ListView):
+    model = 'Note'
+    template_name = "home.html"
+
+    def get_context_data(self):
+        return Note.objects.all()
