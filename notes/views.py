@@ -7,9 +7,6 @@ from django.utils import timezone
 # Create your views here.
 
 
-class HomeView(ListView):
-    model = 'Note'
-    template_name = "home.html"
-
-    def get_context_data(self):
-        return Note.objects.all()
+def home(request):
+    context = {'notes': Note.objects.all}
+    return render(request, 'home.html', context)
