@@ -9,10 +9,6 @@
   <body>
     <div>
       {% for note in notes %} {{note.name}} {{note.date_created}} {{note.text}}
-      <form action="" method="post">
-        <label for="">Add Note</label><input type="text" />
-      </form>
-      <button>Add task</button>
       {%endfor %}
     </div>
   </body>
