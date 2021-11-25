@@ -3,4 +3,5 @@ from notes import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('new', views.addNote, name='new')
 ]
