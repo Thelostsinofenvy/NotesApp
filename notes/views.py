@@ -17,4 +17,4 @@ def addNote(request):
         if form.is_valid():
             form.save()
             return redirect("home")
-    return render(request, 'update.html', {'form': form})
+    return render(request, 'new.html', {'form': form})
