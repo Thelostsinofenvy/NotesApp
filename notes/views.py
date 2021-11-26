@@ -18,3 +18,8 @@ def addNote(request):
             form.save()
             return redirect("home")
     return render(request, 'new.html', {'form': form})
+
+
+def details(request, pk, self):
+    notes = Note.objects.get(pk=self.pk)
+    return render(request, 'details.html', {'notes': notes})
