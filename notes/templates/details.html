@@ -1,2 +1,2 @@
-{% extends 'base.html' %} {% block content %} {% for note in notes %} {{note}}
-{% endfor %} {% endblock content %}
+{% extends 'base.html' %} {% block content %} {% for note in notes %}
+{{note.name}} {{note.text}} {% endfor %} {% endblock content %}
