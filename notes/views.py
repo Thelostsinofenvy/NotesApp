@@ -23,3 +23,12 @@ def addNote(request):
 def details(request, pk):
     notes = Note.objects.filter(pk=pk)
     return render(request, 'details.html', {'notes': notes})
+
+
+def edit(request, pk):
+    instance = get_object_or_404(Note, pk=pk)
+    form = NoteForm(request.POST, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    return render(request, 'edit.html', {'form': form})

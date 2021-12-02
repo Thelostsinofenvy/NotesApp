@@ -1,2 +1,4 @@
 {% extends 'base.html' %} {% block content %} {% for note in notes %}
-{{note.name}} {{note.text}} {% endfor %} {% endblock content %}
+{{note.name}} {{note.text}} <a href="{% url 'edit' pk=note.pk %}">Update</a>
+
+{% endfor %} {% endblock content %}
