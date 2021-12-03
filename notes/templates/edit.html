@@ -1,1 +1,10 @@
-{% extends "base.html" %} %} {% block content %} {% endblock content %}
+{% extends "base.html" %} %} {% block content %}
+<form method="POST">
+  {% csrf_token %}
+  <form action="POST">
+    <label for="{{form.text}}">Title</label>
+    <input type="text" id="fname" name="fname" />
+  </form>
+  <input type="submit" value="Update" />
+</form>
+{% endblock content %}

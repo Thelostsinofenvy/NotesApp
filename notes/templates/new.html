@@ -1,13 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 
 <div>
-  <h4>Add a Note</h4>
-  <form action="" method="post">
-    <label for="">heading</label>
-    <input type="text" value="" /><br />
-    <label for="">Note:</label>
-    <textarea id=" area" /></textarea><br />
-    <input type="button" value="Add Note">
+  <form method="POST">
+    {% csrf_token %} {{ form.as_p }}
+    <input type="submit" value="Add" />
   </form>
 </div>
 

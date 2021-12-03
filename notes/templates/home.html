@@ -12,7 +12,7 @@
     <a href="{% url 'new' %}"><h4>Create New Note</h4></a>
     <div>
       {% for note in notes %}
-      <a href="{% url 'details' pk=note.pk %}">{{note.name}} </a>
+      <a href="{% url 'details' note.id %}">{{note.name}} </a>
       {{note.date_created}} {{note.text}} {%endfor %}
     </div>
     {% endblock %}
