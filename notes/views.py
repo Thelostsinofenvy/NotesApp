@@ -28,7 +28,17 @@ def details(request, id):
 def edit(request, id):
     obj = get_object_or_404(Note, id=id)
     form = NoteForm(request.POST, instance=obj)
-    if form.is_valid():
-        form.save()
-        return redirect('home')
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            return redirect('home')
     return render(request, 'edit.html', {'form': form})
+
+
+def delete(request, id):
+    obj = get_object_or_404(Note, id=id)
+    data = {'obj': obj}
+    if request.method == "POST":
+        obj.delete()
+        return redirect('home')
+    return render(request, 'delete.html', data)
