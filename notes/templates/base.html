@@ -15,12 +15,21 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <title></title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Smooch&display=swap"
+      rel="stylesheet"
+    />
+    <title>NotesApp</title>
   </head>
   <body>
-    <div class="title">
+    <div class="shadow p-3 rounded brdr">
       <div class="container">
-        <h1>Notes</h1>
+        <a href="{% url 'home' %}" style="color: black">
+          <h1>Notes</h1>
+        </a>
       </div>
     </div>
     {% block content %} {% endblock %}
