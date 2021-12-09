@@ -7,18 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <div class="body">
-    <body>
-      {% block content %}
-      <div class="create">
-        <a href="{% url 'new' %}"><h4>Create New Note</h4></a>
+  <body>
+    {% block content %}
+    <div class="create">
+      <a href="{% url 'new' %}"><h4>Create New Note</h4></a>
+    </div>
+    {% for note in notes %}
+    <div class="crd">
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{% url 'details' note.id %}">{{note.name}} </a>
+          </h5>
+          <div class="card-subtitle text-muted mb-2">
+            <h6>{{note.date_created}}</h6>
+          </div>
+          <div class="fs-6">{{note.text}}</div>
+        </div>
       </div>
-      <div>
-        {% for note in notes %}
-        <a href="{% url 'details' note.id %}">{{note.name}} </a>
-        {{note.date_created}} {{note.text}} {%endfor %}
-      </div>
-      {% endblock %}
-    </body>
-  </div>
+    </div>
+    {%endfor %} {% endblock %}
+  </body>
 </html>
