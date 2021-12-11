@@ -3,7 +3,7 @@
   <form method="POST">
     {% csrf_token %}
     <h4>Are you sure you want to delete {{ obj.name }} ?</h4>
-    <input type="submit" value="Yes" />
+    <input type="submit" value="Yes" class="btn btn-primary" />
     <a href="{% url 'home' %}">Cancel </a>
   </form>
 </div>
